@@ -1,15 +1,18 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 
-from .models import Product, Category
+from .models import Product, Category, Rescued
 
 
 # Create your views here.
 def index(request):
     products = Product.objects.all()
     categories = Category.objects.all()
+    rescueds = Rescued.objects.all()
     context = {"products": products,
-               "categories": categories}
+               "categories": categories,
+               "rescueds": rescueds
+               }
     return render(request, "index.html", context)
 
 
@@ -26,3 +29,11 @@ def contact(request):
 
 def login(request):
     return render(request, "login.html")
+
+
+def cat(request):
+    return render(request, "cats.html")
+
+
+def dog(request):
+    return render(request, "dogs.html")

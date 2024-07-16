@@ -46,6 +46,21 @@ class Product(BaseModel):
         return self.name
 
 
+class Rescued(BaseModel):
+    name = models.CharField(max_length=255)
+    age = models.IntegerField()
+    gender = models.CharField(max_length=255)
+    type = models.CharField(max_length=255)
+    race = models.CharField(max_length=255, blank=True, null=True, default=None)
+    description = models.TextField(blank=True, null=True, default=None)
+    direction = models.CharField(max_length=255, blank=True, null=True, default=None)
+    image = models.ImageField(upload_to="products/", blank=True, null=True, default=None)
+    image_url = models.URLField(blank=True, null=True, default=None)
+
+    def __str__(self):
+        return self.name
+
+
 class Category(BaseModel):
     name = models.CharField(max_length=255)
     description = models.TextField(blank=True, null=True, default=None)

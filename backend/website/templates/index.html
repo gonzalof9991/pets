@@ -38,7 +38,7 @@ PetLover - Home
     <div class="card shadow p-3 border-0" style="width: 18rem;">
         <img src="{{product.image_url}}" class="card-img-top" alt="...">
         <div class="card-body">
-            <h5 class="card-title">
+            <h5 class="card-title" style="height: 60px">
                 {{product.name}}
             </h5>
             <div class="d-flex flex-column gap-2">
@@ -56,7 +56,6 @@ PetLover - Home
                             {{ 0 }}
                         {% endif %}
                     </span>
-
                 <span class="fw-medium fs-4">${{product.price}}</span>
             </div>
 
@@ -64,6 +63,15 @@ PetLover - Home
             <p class="card-text">
                 {{product.description}}
             </p>
+
+            <!-- FORM -->
+            <div class="input-group mb-3">
+                <button class="btn btn-outline-secondary" type="button" id="button-addon1">-</button>
+                <input type="text" value="0" class="form-control" placeholder=""
+                       aria-label="Example text with button addon"
+                       aria-describedby="button-addon1">
+                <button class="btn btn-outline-secondary" type="button" id="button-addon2">+</button>
+            </div>
 
             <a href="{% url 'detail' product.id %}" class="btn btn-light mb-2">Ver Detalle</a>
             <button class="btn btn-primary">
@@ -91,5 +99,75 @@ PetLover - Home
     {% endfor %}
 </div>
 {% endif %}
+
+<!-- Products -->
+{% if rescueds %}
+<div class="row gap-4 mb-5">
+    <h1 class="display-3">Rescatados</h1>
+    {% for rescued in rescueds %}
+    <div class="card shadow p-3 border-0" style="width: 18rem;">
+        <img src="{{rescued.image_url}}" class="card-img-top" style="height: 180px" alt="...">
+        <div class="card-body">
+            <h5 class="card-title" style="height: 60px">
+                {{rescued.name}}
+            </h5>
+            <div class="d-flex flex-column gap-2">
+                <div class="d-flex gap-2">
+                    <span class="badge text-bg-light" style="width: max-content">{{rescued.type}}</span>
+                    <span class="badge text-bg-light" style="width: max-content">{{rescued.gender}}</span>
+                    <span data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Edad"
+                          class="badge bg-primary text-white" style="width: max-content">{{rescued.age}}</span>
+                </div>
+                <span class="fw-medium fs-6">{{rescued.direction}}</span>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endif %}
+<!-- Info -->
+<section class="mt-4 bg-body-tertiary">
+    <article>
+        <div style="padding: 6rem;" class=" row justify-content-center align-items-center">
+            <div class="col">
+                <div class="d-flex flex-column justify-content-center align-items-center gap-2" style="width: 16rem;">
+                    <img style="width: 5rem;"
+                         src="https://petsonline.cl/cdn/shop/files/PetsOnline_Iconos1.png?v=1701712758" alt="">
+                    <span class="fw-bold fs-5">
+                        Productos de calidad
+                    </span>
+                    <span class="fs-6">
+
+Te aseguramos que lo que compres en nuestra tienda será lo mejor que encontrarás en el mercado para tus peludos.
+                    </span>
+                </div>
+            </div>
+            <div class="col">
+                <div class="d-flex flex-column justify-content-center align-items-center gap-2" style="width: 16rem;">
+                    <img style="width: 5rem;"
+                         src="https://petsonline.cl/cdn/shop/files/PetsOnline_Iconos2.png?v=1701712765" alt="">
+                    <span class="fw-bold fs-5">
+                        Asesoría personalizada
+                    </span>
+                    <span class="fs-6">
+                        Te asesoramos en tu compra para que puedas seleccionar de manera más fácil y rápida el producto que estás buscando.
+                    </span>
+                </div>
+            </div>
+            <div class="col">
+                <div class="d-flex flex-column justify-content-center align-items-center gap-2" style="width: 16rem;">
+                    <img style="width: 5rem;"
+                         src="https://petsonline.cl/cdn/shop/files/PetsOnline_Iconos3.png?v=1701712773" alt="">
+                    <span class="fw-bold fs-5">
+                        Cercanía y confianza
+                    </span>
+                    <span class="fs-6">
+                        Hacemos seguimiento a todas las familias con las que trabajamos, manteniendo un contacto cercano y duradero.
+                    </span>
+                </div>
+            </div>
+        </div>
+    </article>
+</section>
 
 {% endblock %}

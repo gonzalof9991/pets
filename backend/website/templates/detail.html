@@ -8,7 +8,7 @@ PetLover - Detail
 <h1>Detalle Producto</h1>
 <!-- Products -->
 {% if product %}
-<div class="row gap-4">
+<div class="row gap-4 mb-4">
     <div class="card shadow-sm p-3 border-0" style="max-width: 100%;">
         <div class="row g-0">
             <div class="col-md-4">
@@ -43,6 +43,14 @@ PetLover - Detail
                     <p class="card-text">
                         {{product.description}}
                     </p>
+                    <!-- FORM -->
+                    <div class="input-group mb-3" style="width: max-content">
+                        <button class="btn btn-outline-secondary" type="button" id="button-addon1">-</button>
+                        <input type="text" value="0" class="form-control" placeholder=""
+                               aria-label="Example text with button addon"
+                               aria-describedby="button-addon1">
+                        <button class="btn btn-outline-secondary" type="button" id="button-addon2">+</button>
+                    </div>
                     <button class="btn btn-primary">
                         <i class="bi bi-cart-fill"></i>
                         Agregar al carrito
