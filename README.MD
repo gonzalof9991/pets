@@ -44,3 +44,10 @@ python manage.py createsuperuser
 python manage.py runserver
 ```
 
+## 09 Ir a la página de administración
+
+- Debes escribir en tu navegador la siguiente dirección
+
+```bash
+http://localhost:8000/admin
+```
