@@ -1,0 +1,63 @@
+{% load static %}
+<header class="shadow-sm py-3">
+
+    <nav class="container-fluid px-4 navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <!-- <img src="{% static 'images/icons/pets.png' %}" alt="Logo" width="60" height="60"> -->
+
+            <img src="https://petsonline.cl/cdn/shop/files/PetsOnline_Logotipo_Color1.png?v=1698270142" alt="Logo"
+                 class="img-fluid me-5" width="160" height="80"
+            >
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/dogs">Perros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/cats">Gatos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contact">Contacto</a>
+                    </li>
+                </ul>
+
+                <a class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover me-4"
+                   href="/login">
+                    Iniciar sesión
+                </a>
+                <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#cart">
+                    <i class="bi bi-cart-fill"></i>
+                </button>
+
+            </div>
+        </div>
+    </nav>
+</header>
+
+
+<!-- Modal -->
+<div class="modal fade" id="cart" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                ...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>

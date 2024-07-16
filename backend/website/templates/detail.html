@@ -1,0 +1,56 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+PetLover - Detail
+{% endblock %}
+
+{% block content %}
+<h1>Detalle Producto</h1>
+<!-- Products -->
+{% if product %}
+<div class="row gap-4">
+    <div class="card shadow-sm p-3 border-0" style="max-width: 100%;">
+        <div class="row g-0">
+            <div class="col-md-4">
+                <img src="{{product.image_url}}" class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        {{product.name}}
+                    </h5>
+                    <div class="d-flex flex-column gap-2">
+                        <div class="d-flex gap-2">
+                            <span class="badge text-bg-light" style="width: max-content">{{product.category}}</span>
+                            <span data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Stock disponible"
+                                  class="badge bg-primary text-white"
+                                  style="width: max-content">{{product.stock}}</span>
+                        </div>
+                        <span data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Calificación"
+                              style="width: max-content">
+                    <i class="bi bi-star-fill text-primary"></i>
+                        {% if product.qualification %}
+                            {{ product.qualification }}
+                        {% else  %}
+                            {{ 0 }}
+                        {% endif %}
+                    </span>
+
+                        <span class="fw-medium fs-4">${{product.price}}</span>
+                    </div>
+
+
+                    <p class="card-text">
+                        {{product.description}}
+                    </p>
+                    <button class="btn btn-primary">
+                        <i class="bi bi-cart-fill"></i>
+                        Agregar al carrito
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}
+{% endblock %}

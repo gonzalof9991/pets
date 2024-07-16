@@ -1,0 +1,52 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+PetLover - Contact
+{% endblock %}
+
+{% block content %}
+
+
+<h1 class="text-primary poppins-bold-italic">¡Conversemos!</h1>
+<div class="alert alert-primary d-flex align-items-center" role="alert">
+    <div>
+        <p>Si tienes alguna pregunta o necesitas contactarnos escríbenos a contacto@petsonline.cl o a nuestro Whatsapp
+            +56922595594.<br>También puedes rellenar el siguiente formulario de contacto. ¡Nos pondremos en contacto
+            contigo lo
+            antes posible!</p>
+    </div>
+</div>
+
+<div class="row gap-3">
+    <div class="col">
+        <div class="form-floating">
+            <input type="password" class="form-control" id="floatName" placeholder="Pedro">
+            <label for="floatName">Nombre</label>
+        </div>
+    </div>
+    <div class="col">
+        <div class="form-floating mb-3">
+            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+            <label for="floatingInput">Correo Electrónico</label>
+        </div>
+    </div>
+
+    <div class="col">
+        <div class="form-floating">
+            <input type="number" class="form-control" id="floatNumber" placeholder="9xxxxxxx">
+            <label for="floatNumber">Número de teléfono</label>
+        </div>
+    </div>
+    <div class="col-12">
+        <div>
+            <label for="exampleFormControlTextarea1" class="form-label">Mensaje</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="10"></textarea>
+        </div>
+    </div>
+    <div class="col-12">
+        <button type="submit" class="btn btn-outline-primary btn-lg">Enviar</button>
+    </div>
+</div>
+
+
+{% endblock %}
